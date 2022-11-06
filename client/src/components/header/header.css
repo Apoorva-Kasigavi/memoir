@@ -1,0 +1,76 @@
+.header{
+  width: fit-content;
+  align-items: center;
+ display: block;
+ justify-content: center;
+ height: fit-content;
+ padding-top: 5rem;
+ padding-bottom: 3rem;
+ padding-left:15rem;
+   padding-right: 15rem;
+}
+
+
+
+.thumbs-wrapper{
+ 
+ height: 0;
+ width: 0;
+}
+
+.carousel-status{
+  visibility: collapse;
+}
+.carousalImage{
+  object-fit: cover;
+  border-radius: 2%;
+
+  
+}
+
+.carouselImageContainer{
+  border-radius: 2%;
+  position: relative;
+}
+
+.carousalImageHeading{
+  position: absolute;
+  bottom: 100px;
+  font-size: large;
+  color: white;
+  z-index:1;
+  align-items: center;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: fit-content;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.carousalImageHeading:hover{
+
+  color: rgb(107, 219, 219);
+}
+
+.control-arrow{
+  height: 100%;
+  justify-content: center;
+ 
+ 
+
+  top: 50%;
+}
+.thumbs{
+  visibility: hidden;
+}
+
+.slider-wrapper{
+  border-radius: 2%;
+}
+
+.carousel .control-dots .dot.selected{
+  background-color: teal;
+}
