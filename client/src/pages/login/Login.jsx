@@ -29,7 +29,7 @@ const Login = () => {
         <Form.Control className='input' type="password" placeholder="Password" />
       </Form.Group>
      
-      <Button variant="primary" type="submit">
+      <Button className='submitBtn2'variant="primary" type="submit">
         Submit
       </Button>
     </Form>

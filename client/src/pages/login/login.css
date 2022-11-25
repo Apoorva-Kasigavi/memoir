@@ -74,14 +74,14 @@ Form.Control{
     width: 100px !important;
 }
 
-Button:hover{
+.submitBtn2:hover{
     --bs-btn-hover-bg: #47689c;
     --bs-btn-hover-border-color:#47689c;
 }
 
-Button {
+.submitBtn2 {
     width: 100px;
-    padding: 30px;
+    padding: 10px;
     margin-top:15px;
     --bs-btn-border-color:#2f528b!important;
     border-radius: 10px !important;

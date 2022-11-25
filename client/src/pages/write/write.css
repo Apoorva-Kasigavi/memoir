@@ -1,0 +1,96 @@
+.write {
+    padding-top: 50px;
+    
+  }
+  
+  .writeImg {
+    margin-left: 150px;
+    width: 70vw;
+    height: 500px;
+    border-radius: 10px;
+   
+    object-fit: contain;
+  }
+  
+  .writeForm {
+    position: relative;
+  }
+  
+  .writeFormGroup {
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .writeIcon {
+    width: 25px;
+    height: 25px;
+    font-size: 30px;
+
+    border-radius: 50%;
+    color: rgba(104, 103, 103, 0.678);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .writeIcon:hover{
+    opacity: 100%;
+  }
+  
+  .writeInput {
+    font-size: 30px;
+    border: none;
+    padding: 20px;
+    width: 70vw;
+  }
+  
+  .writeInput::placeholder {
+    color: rgb(189, 185, 185);
+    font-weight: 400;
+  }
+  
+  .writeInput:focus {
+    outline-style: none;
+  }
+  
+  .writeText {
+    width: 70vw;
+    height: 100vh;
+    font-family: inherit;
+    font-size: 20px;
+  }
+  
+  .writeSubmit {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    color: white;
+    background-color: teal;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .submitBtn:hover{
+    --bs-btn-hover-bg: #47689c;
+    --bs-btn-hover-border-color:#47689c;
+}
+
+.submitBtn {
+   height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    margin-top:15px;
+    --bs-btn-border-color:#2f528b!important;
+    border-radius: 10px !important;
+    --bs-btn-color: rgb(253, 253, 253) !important;
+    --bs-btn-bg:#2f528b!important;
+   
+}

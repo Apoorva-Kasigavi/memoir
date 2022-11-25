@@ -33,7 +33,7 @@ const Register = () => {
         <Form.Control className='input' type="password" placeholder="Password" />
       </Form.Group>
      
-      <Button variant="primary" type="submit">
+      <Button className='submitBtn' variant="primary" type="submit">
         Create Account
       </Button>
     </Form>

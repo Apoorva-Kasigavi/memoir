@@ -94,12 +94,12 @@
     padding-right:70px ;
   
 }
-Button:hover{
+.btn:hover{
     --bs-btn-hover-bg: teal;
    
 }
 
-Button {
+.btn {
     --bs-btn-border-color:teal !important;
     border-radius: 18px !important;
     --bs-btn-color: teal !important;

@@ -1,0 +1,111 @@
+.Post{
+    display: flex;
+    
+   
+}
+
+.singlePost{
+    padding-right: 1rem;
+    flex:10
+}
+
+.singlePostHeading{
+    margin-top: 1rem;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+
+
+.tagsContainer{
+    display: flex;
+}
+
+.postInfoAuthor1,.postInfoDate1,.postInfoCategory1{
+    padding:10px;
+    font-weight: 500;
+}
+.postInfoAuthorSpan1{
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.postInfoAuthorSpan1:hover{
+    color: teal;
+}
+.postInfoDateSpan1{
+    font-weight: 400;
+}
+.postInfoCategoryList1{
+    padding: 0;
+    display: flex;
+    padding: 10px;
+}
+
+.postInfoCategory1{
+    padding: 0;
+    list-style:none;
+    
+}
+.postInfoCategoryListItem1{
+    padding: 0;
+    list-style: none;
+    flex-direction: column;
+    padding-left: 6px;
+    cursor: pointer;
+}
+
+.postInfoCategoryListItem1:hover{
+    color:teal;
+}
+
+.postImageContainer{
+   
+}
+
+.postImages{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.sidebar2{
+
+    width: max-content;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.postDesc1{
+    color: rgb(66, 64, 64);
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding: 10px;
+    font-weight: 100;
+    line-height: 1.8;
+}
+
+.postDesc1FirstPara{
+    line-height: 1.8;
+    color: rgb(77, 75, 75);
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;  
+    font-size: 17px;
+    padding: 10px;
+    font-weight: 100;
+}
+.postDesc1FirstPara::first-letter {
+    
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+
+
+
+
+
+

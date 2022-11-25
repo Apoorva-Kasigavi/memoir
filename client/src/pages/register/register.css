@@ -76,16 +76,15 @@
      width: 100px !important;
  }
  
- Button:hover{
+ .submitBtn:hover{
      --bs-btn-hover-bg: #47689c;
      --bs-btn-hover-border-color:#47689c;
  }
  
- Button {
+ .submitBtn {
+    height: fit-content;
      width: fit-content;
-     padding: 30px;
-     padding-left: 46px;
-     padding-right: 47px;
+     padding: 10px;
      margin-top:15px;
      --bs-btn-border-color:#2f528b!important;
      border-radius: 10px !important;
