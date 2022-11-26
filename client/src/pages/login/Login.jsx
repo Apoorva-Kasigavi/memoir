@@ -2,6 +2,7 @@ import React from 'react'
 import './login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import {Link} from 'react-router-dom'
 
 import img from '../../images_two/login.jpg'
 const Login = () => {
@@ -12,7 +13,7 @@ const Login = () => {
       </div>
       <div className='loginContent'>
             <div className='loginNav'>
-                    <p>Not a Member? <span className='signUpLink'>Sign up now </span></p>
+                    <p>Not a Member? <span className='signUpLink'><Link className = "link"exact to = "/register" >Sign up now </Link></span></p>
             </div>
             <div className='loginAuth'>
                <h2 className='signInMessage'><b>Sign in to Memoir</b></h2>

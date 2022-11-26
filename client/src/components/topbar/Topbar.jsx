@@ -1,20 +1,39 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import './topbar.css'
 const Topbar = () => {
+  const user = false;
   return (
+    
     <div className='topbar'>
       <div className='topLeft'>
-           <h1>Memoir</h1>
+           <h1><Link  className="linkLogo" exact to="/">
+              Memoir
+            </Link></h1>
       </div>
 
       <div className='topRight'>
          <ul className='topRightList'>
-         <li className='topRightListItem'>Login</li>
-         <li className='topRightListItem'>Contact</li>
-         <li className='topRightListItem'>About</li>
-         <li className='topRightListItem'>Categories</li>
-         <li className='topRightListItem'>Write</li>
-            <li className='topRightListItem'>Home</li>
+         {user?<li className='topRightListItem'>
+              Logout
+            </li> :<li className='topRightListItem'><Link className="link" to="/login">
+              Login
+            </Link></li>}
+         <li className='topRightListItem'><Link className="link" to="/contact">
+              Contact
+            </Link></li>
+         <li className='topRightListItem'><Link className="link" to="/about">
+              About
+            </Link></li>
+         <li className='topRightListItem'><Link className="link" to="/categories">
+              Categories
+            </Link></li>
+         <li className='topRightListItem'><Link className="link" to="/write">
+              Write
+            </Link></li>
+            <li className='topRightListItem'><Link className="link" to="/">
+              Home
+            </Link></li>
             
             
            
