@@ -23,7 +23,7 @@
 }
 .carousalImage{
   object-fit: cover;
-  border-radius: 2%;
+  border-radius: 25px;
 
   
 }

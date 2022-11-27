@@ -6,14 +6,16 @@ import Register from './pages/register/Register.jsx';
 import Single from './pages/single/Single.jsx';
 import Write from './pages/write/Write.jsx';
 import Profile from './pages/profile/Profile.jsx';
+import { useContext } from 'react';
+import {Context} from "./context/Context.js"
+import './App.css'
 function App() {
-  const user = true;
+  const {user} = useContext(Context);
   return (
     <div className="App">
     <BrowserRouter>
     <Topbar/>
     
-      
       <Routes>
           <Route exact path ="/" element = {<Home/>}/>
           <Route  path ="/login" element = {user?<Home/>:<Login/>}/>
