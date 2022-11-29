@@ -7,7 +7,7 @@ import profilePic from '../../images_two/photo.jpg'
 import About from '../../components/about/About'
 import Timeline from '../../components/timeline/Timeline'
 const Profile = () => {
-  const content = "timeline";
+  const content = "about";
   console.log(__dirname);
   return (
     <div className='profile'>

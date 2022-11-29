@@ -5,6 +5,7 @@ import userRoute from "./routes/users.js";
 import postRoute from "./routes/posts.js";
 import categoryRoute from "./routes/categories.js";
 import authRoute from "./routes/auth.js"
+import profileRoute from "./routes/profile.js"
 import multer from "multer";
 import path from 'path'
 import {fileURLToPath} from 'url';
@@ -21,6 +22,7 @@ app.use('/api/auth',authRoute);
 app.use('/api/users',userRoute);
 app.use('/api/posts', postRoute);
 app.use('/api/categories', categoryRoute);
+app.use('/api/profile',profileRoute);
 app.use("/images", express.static(path.join(__dirname, 'images')));
 
 mongoose.connect(process.env.MONGO_URL,{
