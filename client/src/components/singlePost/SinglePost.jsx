@@ -1,99 +1,140 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Context } from "../../context/Context.js";
 import "./singlePost.css";
 import img1 from "../../images_two/post.jpg";
 import Sidebar from "../sidebar/Sidebar";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { Link } from "react-router-dom";
 const SinglePost = () => {
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
+  const PF = "http://localhost:5000/images/";
+  const [post, setPost] = useState({});
+  const { user } = useContext(Context);
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [Categories,setCategories] = useState([])
+  const [updateMode, setUpdateMode] = useState(false);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get("/posts/" + path);
+      //console.log(res.data);
+      setPost(res.data);
+      setTitle(res.data.title);
+      setDesc(res.data.desc);
+      setCategories(res.data.categories);
+      //console.log(res.data.Categories);
+    };
+
+    getPost();
+  }, [path]);
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`/posts/${post._id}`, {
+        data: { username: user.username },
+      });
+    } catch (err) {}
+  };
+
+  const handleUpdate = async () => {
+    try {
+      await axios.put(`/posts/${post._id}`, {
+        username: user.username,
+        title,
+        desc,
+      });
+      setUpdateMode(false);
+    } catch (err) {}
+  };
+
   return (
     <div className="singlePost">
       <div className="leftPart">
         <div className="singlePostHeading">
-          BVB Renamed as KLE Technological University, Also called as KLE
-          TECHNOLOGICAL UNIVERSITY
+          {updateMode ? (
+            <input
+              type="text"
+              value={title}
+              className="singlePostTitle"
+              autoFocus
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          ) : (
+            <h1 className="singlePostTitle">{title}</h1>
+          )}
         </div>
+        {updateMode && (
+          <button className="singlePostButton" onClick={handleUpdate}>
+            Update
+          </button>
+        )}
         <div className="tagsContainer">
           <p className="postInfoAuthor1">
-            Author:<span className="postInfoAuthorSpan1">Preeti</span>{" "}
+            Author:
+            <span className="postInfoAuthorSpan1">
+              <Link to={`/?user=${post.username}`} className="link">
+                <b> {post.username}</b>
+              </Link>
+            </span>{" "}
           </p>
           <p className="postInfoDate1">
-            Date:<span className="postInfoDateSpan1">12-11-2022</span>{" "}
+            Date: <span className="postInfoDateSpan1">
+               {new Date(post.createdAt).toDateString()}
+            </span>{" "}
           </p>
 
           <ul className="postInfoCategoryList1">
-            <li className="postInfoCategory1">Categories: </li>
-            <li className="postInfoCategoryListItem1">Dance</li>
-            <li className="postInfoCategoryListItem1">Science</li>
+            <p className="postInfoCategory1">Categories: </p>
+            {Categories?
+              Categories.map((item,key) => {
+                return <li className="postInfoCategoryListItem1"><Link to={`/?cat=${item}`} className="link">
+                 {item}
+              </Link></li>
+              }):<p></p>
+            }
+            
+           
           </ul>
           <div className="singlePostEdit">
-            <i className="singlePostIcon far fa-edit"></i>
-            <i className="singlePostIcon far fa-trash-alt"></i>
+            {!updateMode ? (
+              post.username === user?.username && (
+                <div className="singlePostEdit">
+                  <i
+                    className="singlePostIcon far fa-edit"
+                    onClick={() => setUpdateMode(true)}
+                  ></i>
+                  <i
+                    className="singlePostIcon far fa-trash-alt"
+                    onClick={handleDelete}
+                  ></i>
+                </div>
+              )
+            ) : (
+              <p></p>
+            )}
+
+            {/* <i className="singlePostIcon far fa-edit"  onClick={() => setUpdateMode(true)}></i>
+          <i className="singlePostIcon far fa-trash-alt" onClick={handleDelete}></i> */}
           </div>
         </div>
         <div className="postImageContainer1">
-          <img className="postImages" src={img1} alt=""></img>
+          {post.photo && (
+            <img src={PF + post.photo} alt="" className="postImages" />
+          )}
         </div>
         <div className="postContent1">
-          <p className="postDesc1FirstPara">
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Richard McClintock, a Latin professor
-            at Hampden-Sydney College in Virginia, looked up one of the more
-            obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-            going through the cites of the word in classical literature,
-            discovered the undoubtable source. Lorem Ipsum comes from sections
-            1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
-            of Good and Evil) by Cicero, written in 45 BC. This book is a
-            treatise on the theory of ethics, very popular during the
-            Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
-            amet..", comes from a line in section 1.10.32.
-          </p>
-          <p className="postDesc1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Porttitor lacus luctus accumsan tortor posuere ac ut. Nam libero
-            justo laoreet sit amet cursus sit amet. Lorem ipsum dolor sit amet
-            consectetur adipiscing. Maecenas accumsan lacus vel facilisis
-            volutpat est velit. Nunc non blandit massa enim nec. Ut tristique et
-            egestas quis ipsum suspendisse ultrices gravida dictum. Iaculis urna
-            id volutpat lacus laoreet non curabitur gravida. In pellentesque
-            massa placerat duis ultricies. Urna id volutpat lacus laoreet non
-            curabitur. Netus et malesuada fames ac turpis egestas. Tortor at
-            auctor urna nunc id cursus metus. Sollicitudin tempor id eu nisl
-            nunc. Turpis egestas sed tempus urna et pharetra pharetra massa.
-            Auctor urna nunc id cursus. Porttitor leo a diam sollicitudin tempor
-            id.
-          </p>
-          <p className="postDesc1">
-            Lectus urna duis convallis convallis tellus id interdum. Lectus
-            proin nibh nisl condimentum id venenatis a condimentum. Varius vel
-            pharetra vel turpis nunc eget lorem dolor sed. Sit amet tellus cras
-            adipiscing enim eu turpis egestas. A condimentum vitae sapien
-            pellentesque habitant morbi tristique. Scelerisque varius morbi enim
-            nunc faucibus a pellentesque. Volutpat sed cras ornare arcu. Nunc
-            mattis enim ut tellus elementum sagittis. Et ligula ullamcorper
-            malesuada proin libero nunc consequat interdum. A lacus vestibulum
-            sed arcu non. Gravida rutrum quisque non tellus orci ac auctor. Nunc
-            sed velit dignissim sodales ut eu sem. Nunc lobortis mattis aliquam
-            faucibus purus in massa tempor nec. Viverra ipsum nunc aliquet
-            bibendum enim facilisis gravida neque convallis. Nisi scelerisque eu
-            ultrices vitae auctor eu augue ut lectus.
-          </p>
-          <p className="postDesc1">
-            "But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, and expound the actual teachings of the great
-            explorer of the truth, the master-builder of human happiness. No one
-            rejects, dislikes, or avoids pleasure itself, because it is
-            pleasure, but because those who do not know how to pursue pleasure
-            rationally encounter consequences that are extremely painful. Nor
-            again is there anyone who loves or pursues or desires to obtain pain
-            of itself, because it is pain, but because occasionally
-            circumstances occur in which toil and pain can procure him some
-            great pleasure. To take a trivial example, which of us ever
-            undertakes laborious physical exercise, except to obtain some
-            advantage from it? But who has any right to find fault with a man
-            who chooses to enjoy a pleasure that has no annoying consequences,
-            or one who avoids a pain that produces no resultant pleasure?"
-          </p>
+          {updateMode ? (
+            <textarea
+              className="singlePostDescInput"
+              value={desc}
+              onChange={(e) => setDesc(e.target.value)}
+            />
+          ) : (
+            <p className="postDesc1">{desc}</p>
+          )}
         </div>
       </div>
     </div>

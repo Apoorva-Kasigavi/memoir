@@ -7,7 +7,7 @@
     font-family: 'Montserrat', sans-serif;
     color: rgb(75, 71, 71);
     font-weight: 800;
-    -webkit-backface-visibility: hidden;
+  
     position: sticky;
     top:0px;
     z-index: 3;
@@ -16,6 +16,7 @@
     padding-right: 15rem;
     border-bottom: 1px solid rgb(211, 206, 206);
     box-shadow: 10px 0.2px 8px 0.2px grey;
+   
 }
 
 .topbar::before,
@@ -35,13 +36,13 @@
 }
 
 .topLeft > h1{
-    font-weight: 1000;
+    font-weight: 10000;
     font-family: 'Montserrat', sans-serif;
 }
 
 .topRight{
    
-    font-weight: 30000;
+    font-weight: 50000;
     flex: 6;
     font-size: 16px;
 }
@@ -58,6 +59,15 @@
     list-style: none;
     cursor: pointer;
 }
+
+.topImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    margin-bottom:10px;
+  }
 
 .topRightListItem:hover{
     color: teal;

@@ -11,20 +11,21 @@ import {Context} from "./context/Context.js"
 import './App.css'
 function App() {
   const {user} = useContext(Context);
+ 
   return (
     <div className="App">
     <BrowserRouter>
     <Topbar/>
-    
-      <Routes>
+ 
+       <Routes>
           <Route exact path ="/" element = {<Home/>}/>
           <Route  path ="/login" element = {user?<Home/>:<Login/>}/>
           <Route  path ="/register" element = {user?<Home/>:<Register/>}/>
           <Route path = "/post/:postid" element={<Single />} />
           <Route path="/write" element={user ? <Write /> : <Register />} />
           <Route path="/profile" element={user ? <Profile /> : <Register />} />
-      </Routes>
-     
+      </Routes>  
+      {/* <Profile/>  */}
       
       </BrowserRouter>
     </div>

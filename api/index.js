@@ -5,15 +5,23 @@ import userRoute from "./routes/users.js";
 import postRoute from "./routes/posts.js";
 import categoryRoute from "./routes/categories.js";
 import authRoute from "./routes/auth.js"
-//middleware
+import multer from "multer";
+import path from 'path'
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+
+// 👇️ "/home/john/Desktop/javascript"
+const __dirname = path.dirname(__filename);
+
 const app = express();
 dotenv.config();
 app.use(express.json());
-
-app.use('/api/users', userRoute);
-app.use('/api/posts',postRoute);
-app.use('/api/categories',categoryRoute);
 app.use('/api/auth',authRoute);
+app.use('/api/users',userRoute);
+app.use('/api/posts', postRoute);
+app.use('/api/categories', categoryRoute);
+app.use("/images", express.static(path.join(__dirname, 'images')));
 
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser: true,
@@ -22,7 +30,20 @@ mongoose.connect(process.env.MONGO_URL,{
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
-
+  const storage = multer.diskStorage({
+    destination: (req,file,cb)=>{
+      cb(null, "images");
+    },
+    filename: (req,file,cb)=>{
+      cb(null,req.body.name);
+    }
+  });
+  
+  const upload = multer({storage:storage});
+  app.post("/api/upload", upload.single("file"), (req,res)=>{
+    res.status(200).json("File has been uploaded");
+  });
+  
 app.listen("5000" , (req,res)=>{
     console.log("Backend is running on port 5000");
 })
