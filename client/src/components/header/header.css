@@ -1,15 +1,41 @@
 .header{
-  width: fit-content;
+  width: 100%;
   align-items: center;
- display: block;
+ position: relative;
  justify-content: center;
  height: fit-content;
- padding-top: 5rem;
- padding-bottom: 3rem;
- padding-left:15rem;
-   padding-right: 15rem;
+ 
 }
 
+.hero-media{
+  position: relative;
+  margin-bottom: 100px;
+}
+.signed-out-hero .hero-media-asset.is-visible {
+  opacity: 0.5;
+  margin-bottom: 40px;
+}
+.signed-out-hero .hero-media-asset {
+ 
+  height: 600px;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.quote{
+  position: absolute;
+  top:150px;
+  color: rgb(255, 255, 255);
+  margin-left:550px;
+  max-width: 600px;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Lora', serif;
+}
+
+video {
+  object-fit: cover;
+}
 
 
 .thumbs-wrapper{
