@@ -9,7 +9,7 @@ const CategorySchema = new mongoose.Schema(
     },
     count: {
       type: Number,
-      required:true
+      required:false
     }
   },
   { timestamps: true }

@@ -99,7 +99,7 @@
 }
 .btn:hover{
     --bs-btn-hover-bg: teal;
-   
+    --bs-btn-hover-color:white !important;
 }
 
 .btn {

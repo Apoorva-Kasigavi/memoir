@@ -1,6 +1,5 @@
 import React from 'react'
 import './post.css'
-import img1 from '../../images/img1.jpg'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 

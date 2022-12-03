@@ -33,9 +33,11 @@ const SinglePost = () => {
 
   const handleDelete = async () => {
     try {
+      console.log("333");
       await axios.delete(`/posts/${post._id}`, {
         data: { username: user.username },
       });
+      window.location.replace("/");
     } catch (err) {}
   };
 

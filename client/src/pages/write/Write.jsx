@@ -4,6 +4,7 @@ import axios from "axios";
 import { Context } from "../../context/Context.js";
 
 
+
 export default function Write() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -26,11 +27,13 @@ export default function Write() {
   }
 
   const handleMinusCategory = (e)=>{
+    console.log("yes");
     setCategories((categories) => (categories.slice(0, -1)));
   }
 
 
   const handleSubmit = async (e) => {
+    console.log("no");
     e.preventDefault();
     const newPost = {
       username: user.username,
@@ -38,6 +41,44 @@ export default function Write() {
       desc,
       categories
     };
+    
+    // categories.map(async(item)=>{
+    //   const category = {name:item};
+    //   console.log(category)
+    //   try{
+    //     await axios.post("/categories",category);
+    //   }catch(err){
+        
+    //   }
+      
+
+    // })
+
+    // Promise.all(categories.map(async item => {
+
+    //   // Then put your try catch here so that it only wraps around
+    //   // the results of the function you're awaiting...
+    //   let response
+    //   try {
+    //     const category = {name:item};
+    //   //  console.log(category);
+    //   console.log("----------")
+    //     response = await axios.post("/categories",category);
+    //     console.log("*****-")
+    //     console.log(response);
+    //   } catch (err) {
+    //     return err;
+    //   }
+    
+    //   // Anything else you want to do with the response...
+    //   return response
+    
+    // })).then(results => {
+    //   // All the resolved promises returned from the map function.
+    //   console.log(results)
+    
+    // })
+    
     if (file) {
       const data =new FormData();
       const filename = Date.now() + file.name;

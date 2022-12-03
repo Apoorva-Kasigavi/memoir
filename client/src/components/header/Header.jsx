@@ -2,10 +2,6 @@ import React,{useState} from 'react'
 import './header.css'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import img1 from '../images/img1.jpg'
-import img2 from '../images/img2.jpg'
-import img3 from '../images/img3.jpg'
-import { Carousel } from 'react-responsive-carousel';
 import motion from '../images/waves.mp4'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 

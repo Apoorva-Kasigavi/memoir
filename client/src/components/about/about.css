@@ -1,3 +1,11 @@
+.about{
+    background-color:#f2f5f6c8;
+    border-radius: 25px;
+    width: 100%;
+    height:fit-content;
+    margin-top: 50px;
+}
+
 .desc{
     line-height: 1.8;
     color: rgb(77, 75, 75);
@@ -6,6 +14,8 @@
     padding: 10px;
     font-weight: 100;
 }
+
+
 
 .desc::first-letter{
     margin-left: 20px;
