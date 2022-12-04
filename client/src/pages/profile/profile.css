@@ -78,3 +78,19 @@
     height:fit-content;
     margin-top: 50px;
 }
+
+.firstPart{
+    display: flex;
+    justify-content: space-between;
+}
+
+.singlePostIconProfilePage{
+    font-size: 20px;
+    color: gray;
+    margin: 30px 30px 0 0 ;
+    cursor:pointer;
+}
+
+.singlePostIconProfilePage:hover{
+    color:rgb(92, 91, 91);
+}

@@ -16,20 +16,53 @@ const SinglePost = () => {
   const [desc, setDesc] = useState("");
   const [Categories,setCategories] = useState([])
   const [updateMode, setUpdateMode] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/" + path);
-      //console.log(res.data);
-      setPost(res.data);
-      setTitle(res.data.title);
-      setDesc(res.data.desc);
-      setCategories(res.data.categories);
-      //console.log(res.data.Categories);
-    };
+          const res = await axios.get("/posts/" + path);
+          
+          setPost(res.data);
+          setTitle(res.data.title);
+          setDesc(res.data.desc);
+          setCategories(res.data.categories);
 
-    getPost();
-  }, [path]);
+        };
+
+        
+        getPost();
+    //   const res = await axios.get("/posts/" + path);
+      
+      // setPost(res.data);
+      // setTitle(res.data.title);
+      // setDesc(res.data.desc);
+      // setCategories(res.data.categories);
+
+    // };
+    // const getUser = async()=>{
+    //   const nowUser = await axios.get(`/users/username/${post.username}`);
+    //   if(nowUser)
+    //     setCurrentUser(nowUser );
+    //     console.log(currentUser);
+    //     console.log("see avob")
+    // }
+
+   
+
+    // getPost();
+    // getUser();
+    
+  }, []);
+
+
+
+
+  // useEffect(() =>{
+
+    
+    
+  // },[])
+
 
   const handleDelete = async () => {
     try {
@@ -52,6 +85,9 @@ const SinglePost = () => {
     } catch (err) {}
   };
 
+  console.log("current user is");
+  console.log(currentUser);
+  
   return (
     <div className="singlePost">
       <div className="leftPart">
@@ -77,7 +113,7 @@ const SinglePost = () => {
           <p className="postInfoAuthor1">
             Author:
             <span className="postInfoAuthorSpan1">
-            <Link to={`/?user=${post.username}`} className="link">
+            <Link to={`/profile/${post.username}`} className="link">
                 <b> {post.username}</b>
               </Link>
             </span>{" "}
