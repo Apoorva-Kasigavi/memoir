@@ -25,7 +25,7 @@ const Timeline = () => {
        
       getPosts();
    
-  },[])
+  },[path])
 
   return (
     <div className='timeline'>

@@ -1,22 +1,23 @@
 import React, { useEffect, useState, useContext } from 'react'
 import './profile.css'
-import { Routes, useLocation } from 'react-router-dom'
+import { Routes, useLocation, Link } from 'react-router-dom'
 import {Context} from "../../context/Context.js"
 import coverImg from '../../images_two/coverImage.jpg'
-import profilePic from '../../images_two/photo.jpg'
+import profilePic from '../../images_two/defaultProfile.png'
 import About from '../../components/about/About'
 import Timeline from '../../components/timeline/Timeline'
 import axios from 'axios'
 const Profile = () => {
+  const PF = "http://localhost:5000/images/"
   const {user,dispatch} = useContext(Context);
 
-  const [username, setUsername] = useState("");
+
 
 
 
   const [currentUser,setCurrentUser] = useState({});
   const [content,setContent] = useState("about");
-  const [update,setUpdateMode] = useState(false);
+ 
   
   const location = useLocation();
   const path = location.pathname.split("/")[2];
@@ -43,19 +44,19 @@ const Profile = () => {
   return (
     <div className='profile'>
       <div className='topContainer'>
-          <img className='coverImage' src = {coverImg} alt = "Noimage" />
+          <img className='coverImage' src = {currentUser.coverImage?PF  + currentUser.coverImage: coverImg} alt = "Noimage" />
           <div className='firstPart'>
           <p className='profileName'>{currentUser.username}</p>
-          {user.username === currentUser.username ?(<i
+          {user.username === currentUser.username ?(<Link to={`/settings`} ><i
                     className="singlePostIconProfilePage far fa-edit"
-                    onClick={()=>{setUpdateMode(true)}}
-                  ></i>):<p></p>}
+                  
+                  ></i></Link>):<p></p>}
           </div>
           <div className='navigation'>
              <p className='navComponents first' onClick={()=>{setContent("about")}}>About</p>
              <p className='navComponents second' onClick={()=>{setContent("timeline")}}>Timeline</p>
           </div>
-          <img src = {profilePic} alt = "" className='profileImage' />
+          <img src = {currentUser.profilePic?PF  + currentUser.profilePic: profilePic} alt = "" className='profileImage' />
       </div>
       
       <div className='bottomContainer'>

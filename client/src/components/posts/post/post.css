@@ -50,13 +50,10 @@
 
 .postInfoAuthorSpan{
     font-weight: 400;
-    cursor: pointer;
     padding-left: 2px;
 }
 
-.postInfoAuthorSpan:hover{
-    color: teal;
-}
+
 
 .postInfoCategories{
     list-style: none;
@@ -82,11 +79,8 @@
     display: inline;
     padding: 5px;
     padding-left: 1px;
-    cursor:pointer;
 }
-.postInfoCategoryListItem:hover{
-    color: teal;
-}
+
 
 .postDesc{
     margin-top: 10px;

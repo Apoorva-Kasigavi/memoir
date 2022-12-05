@@ -5,35 +5,67 @@ const router = express.Router();
 
 //UPDATE User
 
-router.put("/:id", async (req, res) => {
-  try {
-    console.log("hi");
-    if (req.body.userId === req.params.id) {
-      if (req.body.password) {
-        console.log("h2");
-        const salt = await bcrypt.genSalt(10);
-        req.body.password = await bcrypt.hash(req.body.password, salt);
-      }
-      console.log("h4");
+// router.put("/:id", async (req, res) => {
+//   try {
+//     console.log("hi");
+//     if (req.body.userId === req.params.id) {
+//       if (req.body.password) {
+//         console.log("h2");
+//         const salt = await bcrypt.genSalt(10);
+//         req.body.password = await bcrypt.hash(req.body.password, salt);
+//       }
+//       console.log("h4");
 
-      try {
-        console.log("hr");
-        const updatedUser = await User.findByIdAndUpdate(
-          { _id: req.params.id },
-          { $set: req.body },
-          { new: true }
-        );
-        console.log(updatedUser);
-        console.log("h3");
-        res.status(200).json(updatedUser);
-      } catch (err) {
-        res.status(500).json(err);
-      }
-    } else {
-      res.status(401).json("You can modify only your account");
+//       try {
+//         console.log("hr");
+//        // const posts = await Post.find({username: })
+//         const updatedUser = await User.findByIdAndUpdate(
+//           { _id: req.params.id },
+//           { $set: req.body },
+//           { new: true }
+//         );
+//         console.log("herer")
+//         console.log(updatedUser);
+//         console.log("h3");
+//         res.status(200).json(updatedUser);
+
+        
+//       } catch (err) {
+//         console.log("err");
+//         res.status(500).json(err);
+//       }
+//     } else {
+//       res.status(401).json("You can modify only your account");
+//     }
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+
+router.put("/:id", async (req, res) => {
+  if (req.body.userId === req.params.id) {
+    if (req.body.password) {
+      const salt = await bcrypt.genSalt(10);
+      req.body.password = await bcrypt.hash(req.body.password, salt);
     }
-  } catch (err) {
-    res.status(500).json(err);
+    try {
+      console.log("no")
+      const updatedUser = await User.findByIdAndUpdate(
+        req.params.id,
+        {
+          $set: req.body,
+        },
+        { new: true }
+      );
+      console.log("herher")
+      res.status(200).json(updatedUser);
+    } catch (err) {
+      console.log("err")
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(401).json("You can update only your account!");
   }
 });
 
