@@ -28,6 +28,8 @@ const Topbar = () => {
             <img className="topImg" src={user.profilePic?PF+user.profilePic:defaultProfile} alt="" />
           </Link></li>
         )}
+
+
          {user?<li className="topRightListItem" onClick={handleLogout}>
             Logout</li> : <li className='topRightListItem'><Link className="link" to="/login">
               Login
@@ -36,6 +38,11 @@ const Topbar = () => {
          {/* <li className='topRightListItem'><Link className="link" to="/contact">
               Contact
             </Link></li> */}
+            {user && (<li className="topRightListItem">
+          <Link  className="link"  to="/chat">
+            Inbox
+          </Link></li>
+        )} 
          <li className='topRightListItem'><Link className="link" to="/about">
               About
             </Link></li>

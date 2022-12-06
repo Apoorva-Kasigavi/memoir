@@ -7,6 +7,7 @@ import Single from './pages/single/Single.jsx';
 import Write from './pages/write/Write.jsx';
 import Profile from './pages/profile/Profile.jsx';
 import Settings from './pages/settings/Settings.jsx';
+import Chat from './pages/chat/Chat.jsx';
 import { useContext } from 'react';
 import {Context} from "./context/Context.js"
 import './App.css'
@@ -26,6 +27,7 @@ function App() {
           <Route path="/write" element={user ? <Write /> : <Register />} />
           <Route path="/profile/:id" element={user ? <Profile  /> : <Register />} />
           <Route path="/settings" element={user ? <Settings /> : <Register />} />    
+          <Route path="/chat" element={user ? <Chat /> : <Register />} />  
       </Routes>  
       {/* <Profile/>  */}
       
