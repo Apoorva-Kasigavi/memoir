@@ -75,8 +75,8 @@
 .postImages{
     height: 400px;
     width: 100%;
-    object-fit: cover;
     margin-bottom: 20px;
+    object-fit: contain;
 }
 
 .sidebar2{

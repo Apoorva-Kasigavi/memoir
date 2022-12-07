@@ -3,7 +3,7 @@ import "./login.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import { useRef, useContext } from "react";
+import { useRef, useContext, useState, useEffect } from "react";
 import {Context} from "../../context/Context.js"
 import img from "../../images_two/login.jpg";
 import axios from "axios";
@@ -14,7 +14,12 @@ const Login = () => {
   const userRef = useRef();
   const passwordRef = useRef();
   const { dispatch, isFetching } = useContext(Context);
+  const [error, setError] = useState(false);
   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
@@ -28,6 +33,7 @@ const Login = () => {
       console.log("ok")
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE" });
+      setError(true);
       console.log("fien")
     }
   };
@@ -78,6 +84,7 @@ const Login = () => {
               </Button>
             </Form>
           </fieldset>
+          {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong!</span>}
         </div>
       </div>
     </div>
