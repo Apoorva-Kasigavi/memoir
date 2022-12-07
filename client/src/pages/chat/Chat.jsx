@@ -6,18 +6,33 @@ import "./Chat.css";
 import { useEffect } from "react";
 import { userChats } from "../../controllers/ChatRequests.js";
 import { io } from "socket.io-client";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+
+
 
 const Chat = () => {
   const socket = useRef();
   const { user,dispatch } = useContext(Context);
 
+  
+      
+  
   const [chats, setChats] = useState([]);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [sendMessage, setSendMessage] = useState(null);
   const [receivedMessage, setReceivedMessage] = useState(null);
+
+
+
+
+
   // Get the chat in chat section
   useEffect(() => {
+    
+
+
     const getChats = async () => {
       try {
         const { data } = await userChats(user._id);
@@ -54,6 +69,7 @@ const Chat = () => {
     }
 
     );
+
   }, []);
 
 

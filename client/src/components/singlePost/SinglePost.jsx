@@ -16,7 +16,10 @@ const SinglePost = () => {
   const [desc, setDesc] = useState("");
   const [Categories,setCategories] = useState([])
   const [updateMode, setUpdateMode] = useState(false);
-  const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState(null);
+  
+
+
 
   useEffect(() => {
     const getPost = async () => {
@@ -27,10 +30,12 @@ const SinglePost = () => {
           setDesc(res.data.desc);
           setCategories(res.data.categories);
 
-        };
-
+    }
         
+
+    
         getPost();
+       
     //   const res = await axios.get("/posts/" + path);
       
       // setPost(res.data);
@@ -55,13 +60,22 @@ const SinglePost = () => {
   }, []);
 
 
+//   useEffect(()=>{
+//     console.log("firs");
+//     const getUser = async()=>{
 
 
-  // useEffect(() =>{
+//   }
 
-    
-    
-  // },[])
+ 
+//   getUser();
+// },[])
+  
+
+
+  
+
+
 
 
   const handleDelete = async () => {
@@ -151,8 +165,10 @@ const SinglePost = () => {
                 </div>
               )
             ) : (
+           
               <p></p>
             )}
+          
 
             {/* <i className="singlePostIcon far fa-edit"  onClick={() => setUpdateMode(true)}></i>
           <i className="singlePostIcon far fa-trash-alt" onClick={handleDelete}></i> */}

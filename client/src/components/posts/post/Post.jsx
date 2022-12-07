@@ -49,7 +49,7 @@ const PF ='http://localhost:5000/images/' ;
           {post.desc}
           </p>
 
-          <Button className='btn'variant="outline-success"><Link to = {`/post/${post._id}`} className="link">Read more...</Link></Button>
+          <Button className='btn'variant="outline-success"><Link to = {`/post/${post._id}`} className="linkRead">Read more...</Link></Button>
       </div>
     </div>
   )

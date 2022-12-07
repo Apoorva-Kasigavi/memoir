@@ -82,6 +82,14 @@
 }
 
 
+.linkRead{
+    text-decoration: none;
+    color: teal;
+}
+.linkRead:hover{
+    color: white;
+}
+
 .postDesc{
     margin-top: 10px;
     display: -webkit-box;

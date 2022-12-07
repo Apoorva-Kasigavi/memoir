@@ -46,9 +46,6 @@ const Topbar = () => {
          <li className='topRightListItem'><Link className="link" to="/about">
               About
             </Link></li>
-         <li className='topRightListItem'><Link className="link" to="/categories">
-              Categories
-            </Link></li>
          <li className='topRightListItem'><Link className="link" to="/write">
               Write
             </Link></li>
