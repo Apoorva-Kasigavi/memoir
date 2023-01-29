@@ -1,0 +1,118 @@
+.ChatBox-container {
+    background: var(--cardColor);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-rows: 14vh 60vh 13vh;
+}
+
+.chat-header {
+    padding: 1rem 1rem 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    overflow: scroll;
+}
+
+.message {
+
+  /* background: var(--buttonBg); */
+ /* background-image: linear-gradient(to right top, #00b4d8, #41bfdd, #5fcae3, #79d5e9, #90e0ef);*/
+ /*background-image: linear-gradient(to right top, #474e68, #49506c, #4b5371, #4e5575, #50577a);*/
+ background-color: #DFDFDF;
+  color: black;
+  padding: 0.7rem;
+  border-radius: 1rem 1rem 1rem 0;
+  max-width: 28rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message>span:nth-child(2){
+    font-size: 0.7rem;
+    color: var(--textColor);
+    align-self: end;
+}
+
+.own {
+  align-self: flex-end;
+  border-radius: 1rem 1rem 0 1rem;
+  color: white;
+  /*background-image: linear-gradient(to right top, #ff8787, #fe978f, #fda799, #fab6a6, #f8c4b4);*/
+  /*background-image: linear-gradient(to left top, #bfa2db, #cbafe4, #d8bded, #e4cbf6, #f0d9ff);*/
+  background-color: #5780b3;
+}
+
+
+
+.chat-sender {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    height: 3.5rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    align-self: end;
+}
+.chat-sender>input{
+    height: 70%;
+    background-color: rgb(236, 236, 236);
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    flex  :1 ;
+    font-size: 14px;
+    padding: 0px 15px 0px 15px;
+}
+.chat-sender>div:nth-of-type(1)
+{
+    background: rgb(233, 233, 233);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer
+}
+
+.addImageIcon{
+    padding: 5px 10px 5px 10px;
+
+}
+
+.send-button {
+    background: #AAC4FF;
+    background-image: -webkit-linear-gradient(top, #AAC4FF, #8fb0f7);
+    background-image: -moz-linear-gradient(top, #AAC4FF, #8fb0f7);
+    background-image: -ms-linear-gradient(top, #AAC4FF, #8fb0f7);
+    background-image: -o-linear-gradient(top, #AAC4FF, #8fb0f7);
+    background-image: linear-gradient(to bottom, #AAC4FF, #8fb0f7);
+    -webkit-border-radius: 7;
+    -moz-border-radius: 7;
+    border-radius: 7px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background: #91b4ff;
+    background-image: -webkit-linear-gradient(top, #91b4ff, #7aa6ff);
+    background-image: -moz-linear-gradient(top, #91b4ff, #7aa6ff);
+    background-image: -ms-linear-gradient(top, #91b4ff, #7aa6ff);
+    background-image: -o-linear-gradient(top, #91b4ff, #7aa6ff);
+    background-image: linear-gradient(to bottom, #91b4ff, #7aa6ff);
+    text-decoration: none;
+  }

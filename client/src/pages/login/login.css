@@ -1,0 +1,94 @@
+.login{
+   display: flex;
+   height: 100vh;
+   flex-direction: row;
+}
+
+.sideImageContainer{
+    flex: 5;
+    height: 100vh;
+    width: 100vh;
+}
+
+.sideImage{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.loginContent{
+   flex: 7;
+   background-color: rgba(255, 255, 255, 0.934);
+   padding: 2rem;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+}
+
+.loginNav{
+    text-align: right;
+    height: 40px;
+    justify-content: center;
+    font-weight: 400;
+    width: 100%;
+}
+
+.signUpLink{
+  color: rgb(15, 61, 160);
+}
+.signUpLink:hover{
+    cursor: pointer;
+    color: rgb(40, 82, 174);
+}
+
+.loginAuth{
+    background-color: rgba(233, 229, 236, 0.518);
+    height: fit-content;
+    width: 600px;
+    margin-top: 2rem;
+    margin: auto ;
+    border-radius: 2%;
+}
+
+.signInMessage{
+    font-family: 'Varela Round', sans-serif;
+    padding: 1rem;
+    font-weight: 300;
+}
+
+
+
+.signInfieldset{
+    margin: 2rem;
+}
+
+.signInfieldsetLabel{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    padding-bottom: 0.7rem;
+    font-size: 19px;
+}
+
+Form.Control{
+    width: 100px !important;
+}
+
+.submitBtn2:hover{
+    --bs-btn-hover-bg: #47689c;
+    --bs-btn-hover-border-color:#47689c;
+}
+
+.submitBtn2 {
+    width: 100px;
+    padding: 10px;
+    margin-top:15px;
+    --bs-btn-border-color:#2f528b!important;
+    border-radius: 10px !important;
+    --bs-btn-color: rgb(253, 253, 253) !important;
+    --bs-btn-bg:#2f528b!important;
+   
+}
+
+
+

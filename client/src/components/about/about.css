@@ -1,0 +1,52 @@
+.about{
+    background-color:#f2f5f6c8;
+    border-radius: 25px;
+    width: 100%;
+    height:fit-content;
+    margin-top: 50px;
+}
+
+.desc{
+    line-height: 1.8;
+    color: rgb(77, 75, 75);
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;  
+    font-size: 17px;
+    padding: 10px;
+    font-weight: 100;
+}
+
+
+
+.desc::first-letter{
+    margin-left: 20px;
+}
+
+.contactMe{
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    margin-left:30px;
+    font-weight: 500;
+    
+    padding:3px 0 3px 0;
+    
+}
+
+.seperator{
+    border-top: 0.5px solid rgb(102, 100, 100);
+    font-size:50px;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contactList{
+    line-height: 1.5;
+    list-style: none;
+    padding-bottom: 30px;
+}
+
+.contactListItem{
+    font-size:15px;
+    font-family: "Varela Round", Arial, Helvetica, sans-serif;  
+    margin: 0 0 8px 0;
+}

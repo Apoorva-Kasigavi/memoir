@@ -1,0 +1,111 @@
+.post{
+    display: flex;
+    direction: column;
+    margin: 0 auto 2rem auto;
+    background-color:#f2f5f6c8;
+    border-radius: 8px;
+}
+
+.postImageContainer{
+    flex:2;
+}
+.postImage{
+    object-fit: cover;
+    border-radius: 5%;
+    height: 250px;
+    width: 250px;
+}
+
+.postInfo{
+    flex:9;
+    align-content: stretch;
+    align-items: center;
+    padding-left: 1.5rem;
+    font-family: 'Work Sans', sans-serif;
+    width: auto;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.postInfoHeading{
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.postInfoHeading:hover{
+    color: teal;
+}
+
+.postInfoAuthor{
+  
+    list-style: none;
+    padding-left: 0px;
+    font-size: 1rem;
+    font-weight: 500;
+   
+}
+
+.postInfoAuthorSpan{
+    font-weight: 400;
+    padding-left: 2px;
+}
+
+
+
+.postInfoCategories{
+    list-style: none;
+    padding-left: 0;
+    display: inline-block;
+    
+}
+
+
+
+.postInfoCategory{
+    display: inline;
+    font-size: 1rem;
+}
+
+.postInfoCategoryList{
+    display: inline;
+    padding: 5px;
+    padding-left:0px;
+}
+.postInfoCategoryListItem{
+    list-style: none;
+    display: inline;
+    padding: 5px;
+    padding-left: 1px;
+}
+
+
+.linkRead{
+    text-decoration: none;
+    color: teal;
+}
+.linkRead:hover{
+    color: white;
+}
+
+.postDesc{
+    margin-top: 10px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-right:70px ;
+  
+}
+.btn:hover{
+    --bs-btn-hover-bg: teal;
+    --bs-btn-hover-color:white !important;
+}
+
+.btn {
+    --bs-btn-border-color:teal !important;
+    border-radius: 18px !important;
+    --bs-btn-color: teal !important;
+}
